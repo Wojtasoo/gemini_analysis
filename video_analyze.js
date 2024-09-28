@@ -6,7 +6,7 @@ import fs from "fs";
 
 // Set project and location details
 const projectId = 'cobalt-pursuit-421600';   // Replace with your Google Cloud Project ID
-const location = 'europe-central2-a';        // Specify the location (region)
+const location = 'europe-central2';        // Specify the location (region)
 
 // Initialize Vertex AI client
 const vertexAI = new VertexAI({
@@ -15,7 +15,7 @@ const vertexAI = new VertexAI({
 });
 
 const BUCKET_NAME = 'vid_b';
-const storage = new Storage(projectId, process.env.GOOGLE_APPLICATION_CREDENTIALS);
+const storage = new Storage(projectId, "C:\\Users\\wotmi\\AppData\\Roaming\\gcloud\\application_default_credentials.json");
 const bucket = storage.bucket(BUCKET_NAME);
 
 // YouTube Video URL
@@ -106,10 +106,10 @@ async function analyzeVideo(uri) {
 async function main() {
     try {
         // Step 1: Download YouTube Video
-        const videoFileName = await downloadYouTubeVideo(YOUTUBE_URL);
+        //const videoFileName = await downloadYouTubeVideo(YOUTUBE_URL);
         
         // Step 2: Upload Video to Google Cloud Storage
-        const fileUri = await uploadToGCS(videoFileName);
+        const fileUri = await uploadToGCS("videoo.mp4");
 
         analyzeVideo(fileUri);
 

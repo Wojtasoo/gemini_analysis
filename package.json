@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "ES2015",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "type": "module",
+  "dependencies": {
+    "@google-cloud/aiplatform": "^3.29.0",
+    "@google-cloud/storage": "^7.13.0",
+    "@google-cloud/vertexai": "^1.8.1"
+  },
+  "paths": {
+    "@google-cloud/vertexai": [
+      "node_modules/@google-cloud/vertexai"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
